@@ -1,0 +1,13 @@
+= gitops-public
+
+GitOps resources to make setting up Openshift easier.
+
+== Prereq
+
+Install OpenShift GitOps.
+
+* https://docs.openshift.com/container-platform/4.12/cicd/gitops/installing-openshift-gitops.html
+
+
+
+

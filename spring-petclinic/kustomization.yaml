@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+- route.yaml
+- service.yaml
+- rolebinding.yaml
+- namespace.yaml
+namespace: spring-petclinic
+commonLabels:
+  app: spring-petclinic
+commonAnnotations:
+  my.annotation: myannotation

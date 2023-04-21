@@ -1,0 +1,17 @@
+#ConfigMap to configure IBM foundational services to single namespace
+#19.4.2023: this his how IBM Process Mining is setup to multiple namespaces
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: common-service-maps
+  namespace: kube-public
+  annotations:
+    argocd.argoproj.io/sync-wave: "-9"
+data:
+  common-service-maps.yaml: |
+    namespaceMapping:
+    - requested-from-namespace:
+      - processmining-demo
+      map-to-common-service-namespace: processmining-demo
+    defaultCsNs: ibm-common-services

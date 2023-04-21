@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-petclinic
+  namespace: openshift-gitops
+  finalizers:
+    #cascade delete of resources
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: spring-petclinic
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      #if app-directory includes kustomization.yaml, recurse must be false
+      recurse: false
+    path: spring-petclinic
+    repoURL: https://github.com/samisalkosuo/gitops-public
+    targetRevision: main
+  syncPolicy:
+#    syncOptions:
+#    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,7 @@
+= IBM Process Mining
+
+Install IBM Process Mining in single namespace using GitOps.
+
+Useful to quickly setup Process Mining.
+
+If need to add more Process Mining instances, edit cluster-config/common-service-maps.

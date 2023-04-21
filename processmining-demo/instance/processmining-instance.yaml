@@ -1,0 +1,22 @@
+apiVersion: processmining.ibm.com/v1beta1
+kind: ProcessMining
+metadata:
+  name: pm
+  namespace: processmining-demo
+spec:
+  cloudpak:
+    zen:
+      create: true
+  defaultStorageClassName: ocs-storagecluster-cephfs
+  #defaultStorageClassName: nfs-client
+  license:
+    accept: true
+    cloudPak: IBM Cloud Pak for Business Automation
+  loglevel: INFO
+  processmining:
+    storage:
+      redis:
+        install: false
+  taskmining:
+    install: false
+  version: 1.13.2
