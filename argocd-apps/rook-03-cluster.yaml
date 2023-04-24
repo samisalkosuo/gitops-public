@@ -14,7 +14,7 @@ spec:
   source:
     directory:
       recurse: false
-    path: rook/cluster/overlay/ibmcloud-100gb
+    path: rook/cluster/overlay/ibmcloud-500gb
     repoURL: https://github.com/samisalkosuo/gitops-public
     targetRevision: HEAD
   syncPolicy:
