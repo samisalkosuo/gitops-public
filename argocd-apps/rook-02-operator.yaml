@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rook-operator
+  name: rook-02-operator
   namespace: openshift-gitops  
   finalizers:
     #cascade delete of resources
