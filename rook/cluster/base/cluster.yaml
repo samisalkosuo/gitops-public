@@ -234,7 +234,7 @@ spec:
     #crashcollector: rook-ceph-crashcollector-priority-class
   storage: # cluster level storage configuration and selection
     storageClassDeviceSets:
-    - name: set1
+    - name: device-set-1
       count: 3
       portable: false
       encrypted: false
@@ -244,7 +244,7 @@ spec:
         spec:
           resources:
             requests:
-              storage: 10Gi
+              storage: 500Gi
           # IMPORTANT: Change the storage class depending on your environment (e.g. local-storage, gp2)
           storageClassName: ibmc-vpc-block-10iops-tier
           volumeMode: Block

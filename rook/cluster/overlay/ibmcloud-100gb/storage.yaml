@@ -1,0 +1,25 @@
+apiVersion: ceph.rook.io/v1
+kind: CephCluster
+metadata:
+  name: rook-ceph
+  namespace: rook-ceph # namespace:cluster
+spec:
+  #change storage for ceph cluster 
+  storage:
+    storageClassDeviceSets:
+    - name: device-set-1
+      count: 3
+      portable: false
+      encrypted: false
+      volumeClaimTemplates:
+      - metadata:
+          name: data
+        spec:
+          resources:
+            requests:
+              storage: 100Gi
+          # IMPORTANT: Change the storage class depending on your environment (e.g. local-storage, gp2)
+          storageClassName: ibmc-vpc-block-5iops-tier
+          volumeMode: Block
+          accessModes:
+            - ReadWriteOnce

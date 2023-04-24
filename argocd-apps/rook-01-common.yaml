@@ -18,8 +18,8 @@ spec:
     repoURL: https://github.com/samisalkosuo/gitops-public
     targetRevision: HEAD
   syncPolicy:
-#    syncOptions:
-#    - CreateNamespace=true
+    syncOptions:
+    - ServerSideApply=true
     automated:
       prune: true
       selfHeal: true

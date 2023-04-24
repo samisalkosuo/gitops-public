@@ -14,7 +14,7 @@ spec:
   source:
     directory:
       recurse: false
-    path: rook/cluster/overlay/ibmcloud-100gb
+    path: rook/storageclasses
     repoURL: https://github.com/samisalkosuo/gitops-public
     targetRevision: HEAD
   syncPolicy:
