@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rook-03-cluster
+  name: rook-04-storageclasses
   namespace: openshift-gitops  
   finalizers:
     #cascade delete of resources
