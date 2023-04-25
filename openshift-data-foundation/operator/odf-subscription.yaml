@@ -6,6 +6,6 @@ metadata:
 spec:
   channel: latest 
   installPlanApproval: Automatic
-  name: openshift-gitops-operator 
+  name: odf-operator
   source: redhat-operators 
   sourceNamespace: openshift-marketplace 
