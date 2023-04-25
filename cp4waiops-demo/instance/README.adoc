@@ -1,3 +1,0 @@
-= WAIOps
-
-WAIOps 3.7 does not work with dedicated Common Services.
