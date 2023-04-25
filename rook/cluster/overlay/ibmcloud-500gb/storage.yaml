@@ -20,6 +20,8 @@ spec:
       count: 3
       portable: false
       encrypted: false
+      config:
+        osdsPerDevice: "1"
       volumeClaimTemplates:
       - metadata:
           name: data
