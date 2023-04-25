@@ -20,8 +20,6 @@ spec:
       count: 3
       portable: false
       encrypted: false
-      config:
-        osdsPerDevice: "1"
       volumeClaimTemplates:
       - metadata:
           name: data
@@ -34,3 +32,15 @@ spec:
           volumeMode: Block
           accessModes:
             - ReadWriteOnce
+      placement:
+          topologySpreadConstraints:
+            #only one pod per host
+            - maxSkew: 1
+              topologyKey: kubernetes.io/hostname
+              whenUnsatisfiable: ScheduleAnyway
+              labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - rook-ceph-osd
