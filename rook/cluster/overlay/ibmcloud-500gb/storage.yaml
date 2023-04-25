@@ -5,6 +5,15 @@ metadata:
   namespace: rook-ceph # namespace:cluster
 spec:
   #change storage for ceph cluster 
+  mon:
+    count: 3
+    allowMultiplePerNode: false
+    volumeClaimTemplate:
+      spec:
+        storageClassName: ibmc-vpc-block-10iops-tier
+        resources:
+          requests:
+            storage: 10Gi
   storage:
     storageClassDeviceSets:
     - name: device-set-1
