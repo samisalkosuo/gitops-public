@@ -39,11 +39,13 @@ spec:
               labelSelector:
                 matchExpressions:
                   - key: app
+                    operator: In
+                    values:
+                      - rook-ceph-osd
+                  - key: app
                     operator: NotIn
                     values:
-                      - rook-ceph-osd-0
-                      - rook-ceph-osd-1
-                      - rook-ceph-osd-2
+                      - rook-ceph-osd-prepare
         # topologySpreadConstraints:
         # #only one pod per host
         # - maxSkew: 1
