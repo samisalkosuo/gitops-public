@@ -14,7 +14,7 @@ spec:
   source:
     directory:
       recurse: false
-    path: processmining-demo/instance
+    path: processmining-demo/instance/overlay/storage-rook
     repoURL: https://github.com/samisalkosuo/gitops-public
     targetRevision: HEAD
   syncPolicy:
