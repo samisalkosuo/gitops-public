@@ -3,4 +3,9 @@
 See https://rook.io/docs/rook/v1.11/Getting-Started/ceph-openshift/
 
 
+Get admin password
+```
+oc -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
+```
+
 
