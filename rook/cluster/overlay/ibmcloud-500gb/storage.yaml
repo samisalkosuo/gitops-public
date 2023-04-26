@@ -35,17 +35,13 @@ spec:
       placement: 
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            - topologyKey: kubernetes.io/hostname
-              labelSelector:
+            - labelSelector:
                 matchExpressions:
                   - key: app
                     operator: In
                     values:
                       - rook-ceph-osd
-                  - key: app
-                    operator: NotIn
-                    values:
-                      - rook-ceph-osd-prepare
+              #topologyKey: kubernetes.io/hostname
         # topologySpreadConstraints:
         # #only one pod per host
         # - maxSkew: 1
