@@ -28,15 +28,15 @@ function addApp
 }
 
 #add initial GitOps applications
-addApp argocd-apps/cluster-config.yaml
+addApp argocd-apps/config/cluster-config.yaml
 waitFor 5
-addApp argocd-apps/rook-01-common.yaml
+addApp argocd-apps/rook-ceph/rook-01-common.yaml
 waitFor 5
-addApp argocd-apps/rook-02-operator.yaml
+addApp argocd-apps/rook-ceph/rook-02-operator.yaml
 waitFor 15
-addApp argocd-apps/rook-03-cluster.yaml
+addApp argocd-apps/rook-ceph/rook-03-cluster.yaml
 waitFor 30
-addApp argocd-apps/rook-04-storageclasses.yaml
+addApp argocd-apps/rook-ceph/rook-04-storageclasses.yaml
 waitFor 5
 
 
