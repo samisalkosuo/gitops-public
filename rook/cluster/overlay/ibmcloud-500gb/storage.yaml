@@ -41,7 +41,9 @@ spec:
                   - key: app
                     operator: In
                     values:
-                      - rook-ceph-osd
+                      - rook-ceph-osd-0
+                      - rook-ceph-osd-1
+                      - rook-ceph-osd-2
         # topologySpreadConstraints:
         # #only one pod per host
         # - maxSkew: 1
