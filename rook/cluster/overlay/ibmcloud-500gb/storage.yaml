@@ -39,7 +39,7 @@ spec:
               labelSelector:
                 matchExpressions:
                   - key: app
-                    operator: In
+                    operator: NotIn
                     values:
                       - rook-ceph-osd-0
                       - rook-ceph-osd-1
