@@ -4,4 +4,4 @@ metadata:
   name: pm
   namespace: processmining-demo
 spec:
-  defaultStorageClassName: rook-cephfs
+  defaultStorageClassName: rook-ceph-fs
