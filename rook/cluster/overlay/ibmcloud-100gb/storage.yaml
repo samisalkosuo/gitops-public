@@ -32,3 +32,16 @@ spec:
           volumeMode: Block
           accessModes:
             - ReadWriteOnce
+      placement:
+        topologySpreadConstraints:
+          #only one pod per host
+          - maxSkew: 1
+            topologyKey: kubernetes.io/hostname
+            #change to ScheduleAnyway if allowing pods in same host
+            whenUnsatisfiable: DoNotSchedule
+            labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - rook-ceph-osd
