@@ -5,6 +5,7 @@ resources:
 - storageclass-block.yaml
 - cephfilesystem-cephfs.yaml
 - storageclass-filesystem.yaml
+- test-claims.yaml
 commonAnnotations:
   argocd.argoproj.io/compare-options: IgnoreExtraneous
   
