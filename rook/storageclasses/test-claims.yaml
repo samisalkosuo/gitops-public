@@ -1,0 +1,27 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-block
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Mi
+  storageClassName: rook-ceph-block
+  volumeMode: Block
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-fs
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi
+  storageClassName: rook-ceph-fs
+  volumeMode: Filesystem
