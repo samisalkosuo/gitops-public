@@ -14,7 +14,7 @@ spec:
   source:
     directory:
       recurse: false
-    path: cp4waiops-demo/instance
+    path: cp4waiops-demo/infrastructure-automation
     repoURL: https://github.com/samisalkosuo/gitops-public
     targetRevision: HEAD
   syncPolicy:
