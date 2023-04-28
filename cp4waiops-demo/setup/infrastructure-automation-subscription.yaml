@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-infrastructure-automation-operator
+  namespace: cp4waiops
+  annotations:
+    argocd.argoproj.io/sync-wave: "-5"
+spec:
+  channel: v3.7
+  installPlanApproval: Automatic
+  name: ibm-infrastructure-automation-operator
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
