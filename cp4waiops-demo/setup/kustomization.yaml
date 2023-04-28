@@ -4,6 +4,7 @@ resources:
 - namespace.yaml
 - infrastructure-automation-subscription.yaml
 - ibm-entitlement-key-secret.yaml
+- aimanager-subscription.yaml
 commonAnnotations:
   argocd.argoproj.io/compare-options: IgnoreExtraneous
   
