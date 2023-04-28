@@ -5,4 +5,4 @@ metadata:
   name: awx-instance
 spec:
   service_type: clusterip
-  ingress_type: 
+  ingress_type: route
