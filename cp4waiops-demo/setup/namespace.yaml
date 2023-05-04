@@ -7,3 +7,13 @@ metadata:
 spec:
   finalizers:
   - kubernetes
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ibm-common-services
+  annotations:
+    argocd.argoproj.io/sync-wave: "-10"
+spec:
+  finalizers:
+  - kubernetes

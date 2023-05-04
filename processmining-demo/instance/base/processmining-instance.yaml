@@ -7,8 +7,7 @@ spec:
   cloudpak:
     zen:
       create: true
-  defaultStorageClassName: ocs-storagecluster-cephfs
-  #defaultStorageClassName: nfs-client
+  defaultStorageClassName: rook-ceph-fs
   license:
     accept: true
     cloudPak: IBM Cloud Pak for Business Automation
