@@ -8,12 +8,13 @@ metadata:
 spec:
   imagePullSecret: ibm-entitlement-key
   infraAutoComposableComponents:
-    - enabled: false
+    - enabled: true
       name: ibm-management-im-install
       spec:
         iminstall:
-          #TODO: change to correct, check docs https://www.ibm.com/docs/en/cloud-paks/cloud-pak-watson-aiops/3.7.1?topic=automation-online-installation
-          applicationDomain: cloud.techzone51.net
+          #TODO: change to correct cluster name, check docs https://www.ibm.com/docs/en/cloud-paks/cloud-pak-watson-aiops/3.7.1?topic=automation-online-installation
+          #
+          applicationDomain: inframgmtinstall.apps.demo10.cloud.techzone51.net
           imagePullPolicy: Always
           imagePullSecret: ibm-entitlement-key
           initialAdminGroupName: admin
