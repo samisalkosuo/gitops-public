@@ -11,5 +11,5 @@ spec:
   channel: v3.7
   installPlanApproval: Automatic
   name: ibm-aiops-orchestrator
-  source: cp4waiops
+  source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
