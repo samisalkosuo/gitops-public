@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cp4waiops-demo-instance
+  name: cp4waiops-demo-aimanager-instance
   namespace: openshift-gitops  
   finalizers:
     #cascade delete of resources
