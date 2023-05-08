@@ -1,0 +1,21 @@
+apiVersion: orchestrator.aiops.ibm.com/v1alpha1
+kind: Installation
+metadata:
+  name: ibm-cp-watson-aiops
+  namespace: cp4waiops
+spec:
+  size: small
+  storageClass: rook-ceph-fs
+  storageClassLargeBlock: rook-ceph-block
+  imagePullSecret: ibm-entitlement-key
+  license:
+    accept: true
+  pakModules:
+  - name: aiopsFoundation
+    enabled: true
+  - name: applicationManager
+    enabled: true
+  - name: aiManager
+    enabled: true
+  - name: connection
+    enabled: false
