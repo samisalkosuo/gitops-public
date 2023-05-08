@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - infrastructure-automation-subscription.yaml
+- ai-manager-subscription.yaml
 - ibm-entitlement-key-secret.yaml
 - operatorgroup.yaml
 commonAnnotations:
