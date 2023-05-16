@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: console
+  namespace: openshift-console
+  labels:
+    app: console
+spec:
+  host: ocp.apps.demo8.cloud.techzone51.net
+  to:
+    kind: Service
+    name: console
+    weight: 100
+  port:
+    targetPort: https
+  tls:
+    termination: reencrypt
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
