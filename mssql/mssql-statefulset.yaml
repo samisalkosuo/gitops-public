@@ -21,6 +21,7 @@ spec:
       containers:
       - name: mssql # container name within the pod.
         serviceAccountName: mssql-sa
+        securityContext: scc-mssql
         image: mcr.microsoft.com/mssql/server:2022-latest
         ports:
         - containerPort: 1433
