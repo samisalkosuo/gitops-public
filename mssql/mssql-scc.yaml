@@ -5,6 +5,13 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-7"
 allowPrivilegedContainer: true
+allowHostDirVolumePlugin: true
+allowHostIPC: true
+allowHostNetwork: true
+allowHostPID: true
+allowHostPorts: true
+allowedCapabilities: 
+- '*'
 runAsUser:
   type: RunAsAny
 seLinuxContext:
@@ -13,5 +20,9 @@ fsGroup:
   type: RunAsAny
 supplementalGroups:
   type: RunAsAny
+seccompProfiles:
+- '*'
 users:
 - system:serviceaccount:mssql:mssql-sa
+volumes: 
+- '*'
