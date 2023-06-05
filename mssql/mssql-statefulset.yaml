@@ -22,6 +22,7 @@ spec:
       containers:
       - name: mssql # container name within the pod.
         image: mcr.microsoft.com/mssql/server:2022-latest
+        serviceAccountName: mssql-sa
         securityContext: 
           allowPrivilegeEscalation: true
         ports:
