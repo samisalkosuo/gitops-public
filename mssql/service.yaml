@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql
+  namespace: mssql
+  annotations:
+    argocd.argoproj.io/sync-wave: "-9"
+spec:
+  ports:
+  - name: 1433-tcp
+    port: 1433
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: mssql
+  sessionAffinity: None
+  type: ClusterIP
