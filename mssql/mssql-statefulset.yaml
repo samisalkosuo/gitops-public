@@ -10,7 +10,7 @@ spec:
   replicas: 1 # only one pod, with one SQL Server instance deployed.
   selector:
     matchLabels:
-    app: mssql  # this has to be the same as .spec.template.metadata.labels
+      app: mssql  # this has to be the same as .spec.template.metadata.labels
   template:
     metadata:
     labels:
