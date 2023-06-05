@@ -16,8 +16,8 @@ spec:
       labels:
         app: mssql # this has to be the same as .spec.selector.matchLabels, as documented [here](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/):
     spec:
-      securityContext:
-        allowPrivilegeEscalation: true
+      # securityContext:
+      #   allowPrivilegeEscalation: true
 #        fsGroup: 1000440000
       containers:
       - name: mssql # container name within the pod.
