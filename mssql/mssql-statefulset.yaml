@@ -45,6 +45,7 @@ spec:
       spec:
         accessModes:
         - ReadWriteOnce
+        storageClassName: rook-ceph-fs
         resources:
           requests:
             storage: 20Gi
