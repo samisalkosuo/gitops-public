@@ -25,6 +25,8 @@ spec:
         - containerPort: 1433
           name: tcpsql
         env:
+        - name: MSSQL_PID
+          value: "Developer"
         - name: ACCEPT_EULA
           value: "Y"
         - name: MSSQL_ENABLE_HADR
