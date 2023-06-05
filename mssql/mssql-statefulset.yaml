@@ -44,7 +44,8 @@ spec:
               key: MSSQL_SA_PASSWORD
         volumeMounts:
         - name: mssql
-          mountPath: "/var/opt/mssql"
+          #mountPath: "/var/opt/mssql"
+          mountPath: /mssql/data
   volumeClaimTemplates:
     - metadata:
         name: mssql
