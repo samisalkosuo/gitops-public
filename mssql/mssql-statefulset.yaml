@@ -17,11 +17,13 @@ spec:
         app: mssql # this has to be the same as .spec.selector.matchLabels, as documented [here](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/):
     spec:
       securityContext:
+        allowPrivilegeEscalation: true
 #        fsGroup: 1000440000
       containers:
       - name: mssql # container name within the pod.
         serviceAccountName: mssql-sa
-        securityContext: scc-mssql
+        securityContext:
+          allowPrivilegeEscalation: true
         image: mcr.microsoft.com/mssql/server:2022-latest
         ports:
         - containerPort: 1433
