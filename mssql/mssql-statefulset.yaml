@@ -46,23 +46,23 @@ spec:
           - name: mssql
             #mountPath: "/var/opt/mssql"
             mountPath: /mssql/data
-          - name: "mssql-config"
-            mountPath: "/var/opt/mssql/mssql.conf"
-            subPath: "mssql.conf"
-          - name: mssql-certs
-            mountPath: /certs
-      volumes:
-        - name: mssql-config
-          configMap:
-            name: mssql-configmap
-            items:
-            - key: mssql.conf
-              path: mssql.conf
-            defaultMode: 440          
-        - name: mssql-certs
-          secret:
-            secretName: mssql-tls
-            defaultMode: 0440
+      #     - name: "mssql-config"
+      #       mountPath: "/var/opt/mssql/mssql.conf"
+      #       subPath: "mssql.conf"
+      #     - name: mssql-certs
+      #       mountPath: /certs
+      # volumes:
+      #   - name: mssql-config
+      #     configMap:
+      #       name: mssql-configmap
+      #       items:
+      #       - key: mssql.conf
+      #         path: mssql.conf
+      #       defaultMode: 440          
+      #   - name: mssql-certs
+      #     secret:
+      #       secretName: mssql-tls
+      #       defaultMode: 0440
   volumeClaimTemplates:
     - metadata:
         name: mssql
