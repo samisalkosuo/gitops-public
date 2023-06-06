@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: netshoot
+  namespace: openshift-gitops
+  finalizers:
+    #cascade delete of resources
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      #if app-directory includes kustomization.yaml, recurse must be false
+      recurse: false
+    path: netshoot
+    repoURL: https://github.com/samisalkosuo/gitops-public
+    targetRevision: main
+  syncPolicy:
+#    syncOptions:
+#    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
