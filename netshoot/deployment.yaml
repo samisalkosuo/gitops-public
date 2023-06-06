@@ -9,16 +9,16 @@ metadata:
   namespace: default
 spec:
   replicas: 1
-selector:
-  matchLabels:
-    app: netshoot
-template:
-  metadata:
-    labels:
+  selector:
+    matchLabels:
       app: netshoot
-  spec:
-    containers:
-    - name: netshoot
-      image: nicolaka/netshoot
-      command: ["/bin/bash"]
-      args: ["-c", "while true; do ping localhost; sleep 60;done"]
+  template:
+    metadata:
+      labels:
+        app: netshoot
+    spec:
+      containers:
+      - name: netshoot
+        image: nicolaka/netshoot
+        command: ["/bin/bash"]
+        args: ["-c", "while true; do ping localhost; sleep 60;done"]
