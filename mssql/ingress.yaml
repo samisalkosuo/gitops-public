@@ -9,7 +9,7 @@ spec:
   ingressClassName: public
   rules:
     - host: mssql.techzone51.net
-      http:
+      https:
         paths:
           - backend:
               service:
