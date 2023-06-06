@@ -10,6 +10,7 @@ resources:
 - mssql-configmap.yaml
 - route.yaml
 - mssql-tls-secret.yaml
+- ingress.yaml
 commonAnnotations:
   argocd.argoproj.io/compare-options: IgnoreExtraneous
   

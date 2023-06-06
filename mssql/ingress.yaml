@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mssql-ingress
+  namespace: mssql
+  annotations:
+    argocd.argoproj.io/sync-wave: "-7"
+spec:
+  ingressClassName: public
+  rules:
+    - host: mssql.techzone51.net
+      http:
+        paths:
+          - backend:
+              service:
+                name: mssql
+                port:
+                  number: 1433
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - mssql.techzone51.net
+      secretName: mssql-tls
