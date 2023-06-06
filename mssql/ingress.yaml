@@ -8,8 +8,8 @@ metadata:
 spec:
   ingressClassName: public
   rules:
-    - host: mssql.techzone51.net
-      https:
+    - host: mssql2.techzone51.net
+      http:
         paths:
           - backend:
               service:
@@ -20,5 +20,5 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - mssql.techzone51.net
+        - mssql2.techzone51.net
       secretName: mssql-tls

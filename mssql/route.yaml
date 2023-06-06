@@ -6,6 +6,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-9"
 spec:
+  host: mssql.techzone51.net
   to:
     kind: Service
     name: mssql
