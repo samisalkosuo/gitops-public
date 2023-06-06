@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mssql-configmap
+  namespace: mssql
+  annotations:
+    argocd.argoproj.io/sync-wave: "-6"
+data:
+  #script to update global pull secret
+  mssql.conf: |
+    [network]
+    tlscert = /certs/tls.crt
+    tlskey = /certs/tls.key
+    tlsprotocols = 1.3
+    forceencryption = 1

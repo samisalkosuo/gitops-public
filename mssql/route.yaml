@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: mssql-route
+  namespace: mssql
+  annotations:
+    argocd.argoproj.io/sync-wave: "-9"
+spec:
+  to:
+    kind: Service
+    name: mssql
+    weight: 100
+  port:
+    targetPort: 1433-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
