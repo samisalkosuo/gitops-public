@@ -51,18 +51,18 @@ spec:
             subPath: "mssql.conf"
           - name: mssql-certs
             mountPath: /certs
-  volumes:
-    - name: mssql-config
-      configMap:
-        name: mssql-configmap
-        items:
-        - key: mssql.conf
-          path: mssql.conf
-        defaultMode: 440          
-    - name: mssql-certs
-      secret:
-        secretName: mssql-tls
-        defaultMode: 0440
+      volumes:
+        - name: mssql-config
+          configMap:
+            name: mssql-configmap
+            items:
+            - key: mssql.conf
+              path: mssql.conf
+            defaultMode: 440          
+        - name: mssql-certs
+          secret:
+            secretName: mssql-tls
+            defaultMode: 0440
   volumeClaimTemplates:
     - metadata:
         name: mssql
