@@ -9,7 +9,7 @@ resources:
 - serviceaccount.yaml
 - mssql-configmap.yaml
 - route.yaml
-- tls-secret.yaml
+- mssql-tls-secret.yaml
 commonAnnotations:
   argocd.argoproj.io/compare-options: IgnoreExtraneous
   
