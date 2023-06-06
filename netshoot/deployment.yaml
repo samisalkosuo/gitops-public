@@ -21,4 +21,4 @@ spec:
       - name: netshoot
         image: nicolaka/netshoot
         command: ["/bin/bash"]
-        args: ["-c", "while true; do ping localhost; sleep 60;done"]
+        args: ["-c", "while true; do date; ping -c 1 localhost; sleep 120;done"]
