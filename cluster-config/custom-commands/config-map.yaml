@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: custom-commands-config-map
+  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "-8"
+data:
+  #custom commands during setup
+  custom-commands.sh: |
+    #remove default annotation from existing storageclass
+    oc patch storageclass ibmc-vpc-block-10iops-tier -p '{"metadata": {"annotations": {"storageclass.kubernetes.io/is-default-class": "false"}}}'  

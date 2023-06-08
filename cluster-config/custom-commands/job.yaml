@@ -1,0 +1,34 @@
+#job to run custom commands
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: custom-commands-job
+  namespace: default
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  #ttlSeconds does not work correctly with ArgoCD, shows job as out of sync
+  #ttlSecondsAfterFinished: 1800
+  template:
+    backoffLimit: 3
+    spec:    
+      containers:
+        - name: custom-commands-exec
+          image: "registry.redhat.io/openshift4/ose-cli:latest"
+          command:
+            - "/bin/bash"
+            - "/etc/config/custom-commands.sh" 
+          volumeMounts:
+            - mountPath: "/etc/config"
+              name: "custom-commands-volume"
+      volumes:
+        - name: "custom-commands-volume"
+          configMap:
+            name: "custom-commands-config-map"
+      restartPolicy: "Never"
+      terminationGracePeriodSeconds: 30
+      activeDeadlineSeconds: 500
+      dnsPolicy: "ClusterFirst"
+      serviceAccountName: "custom-commands-service-account"
