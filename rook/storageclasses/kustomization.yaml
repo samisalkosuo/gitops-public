@@ -12,7 +12,7 @@ commonAnnotations:
 patches:
 - patch: |-
   - op: replace
-    path: "/metadata/annotations/storageclass.kubernetes.io/is-default-class"
+    path: "/metadata/annotations/storageclass.kubernetes.io\/is-default-class"
     value: false
   target:
     kind: StorageClass
