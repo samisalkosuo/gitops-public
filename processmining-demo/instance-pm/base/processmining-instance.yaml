@@ -1,0 +1,21 @@
+apiVersion: processmining.ibm.com/v1beta1
+kind: ProcessMining
+metadata:
+  name: pm
+  namespace: pm-demo
+spec:
+  cloudpak:
+    zen:
+      create: true
+  defaultStorageClassName: rook-ceph-fs
+  license:
+    accept: true
+    cloudPak: IBM Cloud Pak for Business Automation
+  loglevel: INFO
+  processmining:
+    storage:
+      redis:
+        install: false
+  taskmining:
+    install: false
+  version: 1.14.0
