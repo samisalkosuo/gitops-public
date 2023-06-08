@@ -4,7 +4,7 @@ metadata:
   name: rook-ceph-fs
   annotations:
     argocd.argoproj.io/sync-wave: "-9"
-  storageclass.kubernetes.io/is-default-class: "true"
+    storageclass.kubernetes.io/is-default-class: "true"
 # Change "rook-ceph" provisioner prefix to match the operator namespace if needed
 provisioner: rook-ceph.cephfs.csi.ceph.com
 parameters:
