@@ -2,7 +2,7 @@ apiVersion: processmining.ibm.com/v1beta1
 kind: ProcessMining
 metadata:
   name: pm
-  namespace: pm-demo
+  namespace: ibm-pm-demo
 spec:
   cloudpak:
     zen:

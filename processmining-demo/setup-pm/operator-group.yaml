@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1alpha2
 kind: OperatorGroup
 metadata:
   name: processmining-group
-  namespace: pm-demo
+  namespace: ibm-pm-demo
   annotations:
     argocd.argoproj.io/sync-wave: "-8"
 spec:
