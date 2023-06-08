@@ -8,4 +8,13 @@ resources:
 - test-claims.yaml
 commonAnnotations:
   argocd.argoproj.io/compare-options: IgnoreExtraneous
-  
+#remove default storage class
+patches:
+- patch: |-
+  - op: replace
+    path: "/metadata/annotations/storageclass.kubernetes.io/is-default-class"
+    value: false
+  target:
+    kind: StorageClass
+    name: ibmc-vpc-block-10iops-tier
+
