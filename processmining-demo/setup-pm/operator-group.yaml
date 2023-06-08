@@ -7,4 +7,4 @@ metadata:
     argocd.argoproj.io/sync-wave: "-8"
 spec:
   targetNamespaces:
-  - pm-demo
+  - ibm-pm-demo
