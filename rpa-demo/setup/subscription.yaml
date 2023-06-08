@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1 
+kind: Subscription 
+metadata: 
+  name: rpa-subscription 
+  namespace: ibm-rpa-demo
+  annotations:
+    argocd.argoproj.io/sync-wave: "-8"
+spec: 
+  channel: v1.14
+  installPlanApproval: Automatic 
+  name: ibm-automation-rpa 
+  source: ibm-operator-catalog 
+  sourceNamespace: openshift-marketplace

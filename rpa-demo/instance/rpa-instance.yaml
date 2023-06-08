@@ -1,0 +1,40 @@
+apiVersion: rpa.automation.ibm.com/v1beta1
+kind: RoboticProcessAutomation
+metadata:
+  name: rpa-demo
+  namespace: ibm-rpa-demo
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
+spec:
+  license:
+    accept: true
+  version: 1.14.0
+  tls: {}
+  api:
+    externalConnection:
+      secretName: rpa-database-secrets
+    firstTenant:
+      name: admin
+      owner:
+        ownersecret:
+          secretName: first-tenant-secret
+    replicas: 1
+    smtp:
+      port: 587
+      server: smtp.sendgrid.net
+      userSecret:
+        secretName: smtp-secret
+    storage: {}
+  ui:
+    replicas: 1
+  ocr:
+    replicas: 1
+  antiVirus:
+    replicas: 0
+  createRoutes: true
+  webDriverUpdates:
+    enabled: true
+  systemQueueProvider:
+    highAvailability: false    
+  hotStorageCleanup:
+    enabled: true
