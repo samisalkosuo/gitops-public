@@ -15,18 +15,19 @@ roleRef:
   name: cluster-admin
 ---
 #add cluster admin rights to gitops service account
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: gitops-cluster-admin-crb
-  namespace: default
-  annotations:
-    argocd.argoproj.io/sync-wave: "-10"
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-- kind: ServiceAccount
-  name: openshift-gitops-argocd-application-controller
-  namespace: openshift-gitops
+#uncomment if not already added via some other application
+# kind: ClusterRoleBinding
+# apiVersion: rbac.authorization.k8s.io/v1
+# metadata:
+#   name: gitops-cluster-admin-crb
+#   namespace: default
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "-10"
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: ClusterRole
+#   name: cluster-admin
+# subjects:
+# - kind: ServiceAccount
+#   name: openshift-gitops-argocd-application-controller
+#   namespace: openshift-gitops
