@@ -2,7 +2,7 @@
 kind: Job
 apiVersion: batch/v1
 metadata:
-  name: custom-commands-job
+  name: patch-registry-job
   namespace: default
   annotations:
     argocd.argoproj.io/hook: Sync
@@ -15,11 +15,11 @@ spec:
     backoffLimit: 3
     spec:    
       containers:
-        - name: custom-commands-exec
+        - name: patch-registry-exec
           image: "registry.redhat.io/openshift4/ose-cli:latest"
           command:
             - "/bin/bash"
-            - "/etc/config/custom-commands.sh" 
+            - "/etc/config/patch-image-registry.sh" 
           volumeMounts:
             - mountPath: "/etc/config"
               name: "custom-commands-volume"

@@ -6,7 +6,10 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-8"
 data:
-  #custom commands during setup
-  custom-commands.sh: |
+  #custom commands
+  custom-commands-setup.sh: |
     #remove default annotation from existing storageclass
     oc patch storageclass ibmc-vpc-block-10iops-tier -p '{"metadata": {"annotations": {"storageclass.kubernetes.io/is-default-class": "false"}}}'  
+  patch-image-registry.sh: |
+    #patch internal image registry to use default storegaclass
+    oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"managementState":"Managed","defaultRoute":true,"storage":{"pvc":{"claim":""}}}}'
