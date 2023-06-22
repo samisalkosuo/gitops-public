@@ -8,7 +8,7 @@ metadata:
     ceph_daemon_id: a
     rook_cluster: rook-ceph
 spec:
-  host: ceph-dashboard.apps.demo.cloud.techzone51.net
+  host: ceph-dashboard.apps.demo14.cloud.techzone51.net
   to:
     kind: Service
     name: rook-ceph-mgr-dashboard
