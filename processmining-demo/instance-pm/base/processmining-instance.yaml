@@ -17,5 +17,5 @@ spec:
       redis:
         install: false
   taskmining:
-    install: false
+    install: true
   version: 1.14.1
