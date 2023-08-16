@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-db2uoperator
+  namespace: db2
+  annotations:
+    argocd.argoproj.io/sync-wave: "-7"
+spec:
+  channel: v110508.0
+  installPlanApproval: Automatic
+  name: ibm-db2uoperator
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
