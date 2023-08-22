@@ -1,0 +1,71 @@
+apiVersion: db2u.databases.ibm.com/v1
+kind: Db2uCluster
+metadata:
+  name: db2cluster
+  namespace: db2
+spec:
+  version: s11.5.8.0-cn2
+  account:
+    privileged: true
+  environment:
+    database:
+      name: sampledb
+    dbType: db2oltp
+    ldap:
+      enabled: false
+  license:
+    accept: true
+  podConfig:
+    db2u:
+      resource:
+        db2u:
+          limits:
+            cpu: "16"
+            memory: 64Gi
+  size: 1
+  storage:
+  - name: meta
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: rook-ceph-fs
+    type: create
+  - name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 100Gi
+      storageClassName: rook-ceph-block
+    type: template
+  - name: backup
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: rook-ceph-fs
+    type: create
+  - name: activelogs
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: rook-ceph-block
+    type: template
+  - name: tempts
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: rook-ceph-block
+    type: template
