@@ -20,8 +20,8 @@ spec:
       resource:
         db2u:
           limits:
-            cpu: "16"
-            memory: 64Gi
+            cpu: "14"
+            memory: 48Gi
   size: 1
   storage:
   - name: meta
