@@ -10,9 +10,13 @@ spec:
   environment:
     database:
       name: sampledb
+      disableNodePortService: true
     dbType: db2oltp
     ldap:
       enabled: false
+    instance:
+      registry:
+        DB2_4K_DEVICE_SUPPORT: "ON"  
   license:
     accept: true
   podConfig:
