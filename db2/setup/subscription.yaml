@@ -8,6 +8,6 @@ metadata:
 spec:
   channel: v110508.0
   installPlanApproval: Automatic
-  name: ibm-db2uoperator
+  name: db2u-operator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
