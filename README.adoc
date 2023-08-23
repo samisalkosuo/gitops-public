@@ -2,11 +2,12 @@
 
 GitOps resources to make setting up Openshift easier.
 
-== Prereq
+== Prereqs
 
-Install OpenShift GitOps.
 
-* https://docs.openshift.com/container-platform/4.12/cicd/gitops/installing-openshift-gitops.html
+* OpenShift installed.
+* OpenShift GitOps installed.
+
 
 
 
