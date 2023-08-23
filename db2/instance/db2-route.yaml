@@ -2,7 +2,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
  name: db2-route
-namespace: db2
+ namespace: db2
  labels:
    formation_id: db2cluster
 spec:
