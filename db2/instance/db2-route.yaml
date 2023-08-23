@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+ name: db2-route
+ labels:
+   formation_id: db2cluster
+spec:
+ port:
+   targetPort: 50001
+ tls:
+   insecureEdgeTerminationPolicy: None
+   termination: passthrough
+ to:
+   kind: Service
+   name: c-db2cluster-db2u
+   weight: 100
+ wildcardPolicy: None
