@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devcon
+  namespace: openshift-gitops
+  finalizers:
+    #cascade delete of resources
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      #if app-directory includes kustomization.yaml, recurse must be false
+      recurse: false
+    path: openshift
+    repoURL: https://github.com/samisalkosuo/devcon
+    targetRevision: main
+  syncPolicy:
+#    syncOptions:
+#    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
